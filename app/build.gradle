@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.ericho.ultradribble"
-        minSdkVersion 22
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -23,27 +25,60 @@ android {
 ext{
     retrofit2Version = '2.3.0'
     okhttp3Version = '3.9.0'
+    ankoLibVersion = "0.10.1"
     rxkotlinVersion = '2.1.0'
-    supportLibraryVersion = '26.0.1'
+    rxAndroidVersion = '2.0.1'
+    glideVersion = "4.1.1"
+    flexboxVersion = "0.3.0-alpha4"
+    supportLibraryVersion = '26.0.2'
+    archRoomVersion = '1.0.0-alpha9'
+    deeplinkDispatchVersion = "3.1.0"
 }
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile "com.squareup.retrofit2:retrofit:$retrofit2Version"
-    compile "com.squareup.retrofit2:converter-gson:$retrofit2Version"
-    compile "com.squareup.retrofit2:adapter-rxjava:$retrofit2Version"
-    compile "com.squareup.okhttp3:okhttp:$okhttp3Version"
-    compile "com.squareup.okhttp3:logging-interceptor:$okhttp3Version"
-    compile "io.reactivex.rxjava2:rxkotlin:$rxkotlinVersion"
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    // Retrofit series
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2Version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2Version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2Version"
+    //okhttp3
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3Version"
+    //rxJava
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlinVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    // Anko lib
+    implementation "org.jetbrains.anko:anko-commons:$ankoLibVersion"
+    // FlexBox layout
+    implementation "com.google.android:flexbox:$flexboxVersion"
+    // Room
+    implementation "android.arch.persistence.room:runtime:$archRoomVersion"
+    implementation "android.arch.persistence.room:rxjava2:$archRoomVersion"
+    kapt "android.arch.persistence.room:compiler:$archRoomVersion"
 
+    // DeepLink dispatch
+    implementation "com.airbnb:deeplinkdispatch:$deeplinkDispatchVersion"
+    kapt "com.airbnb:deeplinkdispatch-processor:$deeplinkDispatchVersion"
 
+    // Support series
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation "com.android.support:support-v4:$supportLibraryVersion"
+    implementation "com.android.support:design:$supportLibraryVersion"
+    implementation "com.android.support:preference-v14:$supportLibraryVersion"
+    implementation "com.android.support:palette-v7:$supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
 
+    androidTestImplementation "com.google.code.findbugs:jsr305:3.0.1"
 
 }
 

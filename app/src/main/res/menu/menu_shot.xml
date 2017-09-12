@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.shot.ShotActivity">
+
+    <item
+        android:id="@+id/action_shot"
+        android:icon="@drawable/ic_more_vert_black_24dp"
+        android:title="@string/action_shot"
+        app:showAsAction="ifRoom">
+
+        <menu>
+
+            <group android:checkableBehavior="none">
+
+                <item
+                    android:id="@+id/action_share"
+                    android:icon="@drawable/ic_share_black_24dp"
+                    android:orderInCategory="1"
+                    android:title="@string/action_share"
+                    app:showAsAction="never" />
+
+                <item
+                    android:id="@+id/action_open_in_browser"
+                    android:icon="@drawable/ic_open_in_browser_black_24dp"
+                    android:orderInCategory="2"
+                    android:title="@string/action_open_in_browser"
+                    app:showAsAction="never" />
+
+            </group>
+
+        </menu>
+
+    </item>
+
+</menu>

@@ -1,3 +1,80 @@
 <resources>
     <string name="app_name">UltraDribble</string>
+
+    <!--Common-->
+    <string name="empty_content">Oops…nothing here</string>
+    <string name="network_error">Network error</string>
+    <string name="gif">GIF</string>
+
+    <!--Get started-->
+    <string name="get_started">GET STARTED</string>
+    <string name="welcome_to_mango">WELCOME TO ULTRADRIBBLE</string>
+    <string name="request_refresh_token_failed">Request refresh token failed</string>
+
+    <!--Main page-->
+    <string name="popular">Popular</string>
+    <string name="following">Following</string>
+    <string name="recent">Recent</string>
+    <string name="debuts">Debuts</string>
+    <string name="shot_title">%1$s - %2$s</string>
+    <!--Main page menus-->
+    <string name="action_main">action_main</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_log_out">Log out</string>
+    <string name="log_out">Log out</string>
+    <string name="logout_message">Look forward to meet you again.</string>
+
+    <!--Shot detail-->
+    <string name="likes_formatted">Likes %1$d</string>
+    <string name="comments_formatted">Comments %1$d</string>
+    <string name="views_formatted">Views %1$d</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="copied">Copied</string>
+    <string name="share_to">Share to</string>
+    <!--Shot detail menus-->
+    <string name="action_shot">action_shot</string>
+    <string name="action_share">Share</string>
+    <string name="action_open_in_browser">Open in browser</string>
+
+    <!--Comments-->
+    <string name="add_comment_hint">Add comment</string>
+    <string name="add_comment_failed">Add comment failed</string>
+
+    <!--User profile-->
+    <string name="followers_formatted">Followers %1$d</string>
+    <string name="following_formatted">Following %1$d</string>
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="tab_title_shots">SHOTS %1$d</string>
+    <string name="tab_title_likes">LIKES %1$d</string>
+    <!--User profile menus-->
+    <string name="action_user">action_user</string>
+
+    <!--Settings-->
+    <string name="settings">Settings</string>
+    <string name="general">General</string>
+    <string name="clear_cache_desc">Cache size: %1$d MB</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
+    <string name="version_desc">1.0.0</string>
+    <string name="open_source_licenses">Open Source Licenses</string>
+    <string name="authors">Authors</string>
+    <string name="contributors">Contributors</string>
+    <string name="contributors_desc">https://github.com/contributors</string>
+    <string name="follow_me_on_github">Follow Me on GitHub</string>
+    <string name="follow_me_on_github_desc">https://github.com/wingsoum93</string>
+    <string name="support">Support</string>
+    <string name="source_code">Source Code</string>
+    <string name="source_code_desc">https://github.com/wingsoum93/UltraDribble</string>
+    <string name="feedback">Feedback</string>
+    <string name="feedback_email">wingsum.developer@gmail.com</string>
+    <string name="feedback_email_subject">UltraDribble Feedback</string>
+    <string name="feedback_desc">Help me make UltraDribble App better</string>
+
+    <!--Image content descriptions-->
+    <string name="avatar_desc">Avatar</string>
+    <string name="send_desc">Send</string>
+    <string name="shot_desc">Shot</string>
+    <string name="like_desc">Like</string>
 </resources>

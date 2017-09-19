@@ -30,7 +30,7 @@ class CommentsAdapter(context: Context, list: List<Comment>) : RecyclerView.Adap
         val comment = mList[position]
         with(viewHolder as CommentViewHolder) {
 
-            itemView.avatar.loadAvatar( comment.user.avatarUrl)
+            itemView.avatar.loadAvatar( comment.user.avatarUrl!!)
 
             itemView.comment_body.text = if (Build.VERSION.SDK_INT >= 24) {
                 Html.fromHtml(comment.body, Html.FROM_HTML_MODE_LEGACY)

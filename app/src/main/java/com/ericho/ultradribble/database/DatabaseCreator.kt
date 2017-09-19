@@ -25,6 +25,7 @@ object DatabaseCreator {
 
         Thread(Runnable {
             mDatabase = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, AppDatabase.DATABASE_NAME)
+                    .fallbackToDestructiveMigration()
                     .build()
             mIsDbCreated.set(true)
 

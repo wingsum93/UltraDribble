@@ -52,27 +52,27 @@ data class User(
         @ColumnInfo(name = "name")
         @SerializedName("name")
         @Expose
-        var name: String,
+        var name: String?,
 
         @ColumnInfo(name = "username")
         @SerializedName("username")
         @Expose
-        var username: String,
+        var username: String?,
 
         @ColumnInfo(name = "html_url")
         @SerializedName("html_url")
         @Expose
-        var htmlUrl: String,
+        var htmlUrl: String?,
 
         @ColumnInfo(name = "avatar_url")
         @SerializedName("avatar_url")
         @Expose
-        var avatarUrl: String,
+        var avatarUrl: String?,
 
         @ColumnInfo(name = "bio")
         @SerializedName("bio")
         @Expose
-        var bio: String,
+        var bio: String?,
 
         @ColumnInfo(name = "location")
         @SerializedName("location")
@@ -82,7 +82,7 @@ data class User(
         @Embedded
         @SerializedName("links")
         @Expose
-        var links: Links,
+        var links: Links?,
 
         @ColumnInfo(name = "buckets_count")
         @SerializedName("buckets_count")

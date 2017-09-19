@@ -9,34 +9,32 @@ import com.ericho.ultradribble.R
 import com.ericho.ultradribble.data.Shot
 import com.ericho.ultradribble.extension.loadAvatar
 import com.ericho.ultradribble.extension.loadNormal
+import com.ericho.ultradribble.widget.BaseRecyclerAdapter
 import kotlinx.android.synthetic.main.item_shot.view.*
 
 /**
  */
 
-class ShotsAdapter(context: Context, list: List<Shot>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ShotsAdapter(context: Context, list: List<Shot>) : BaseRecyclerAdapter<Shot,ShotsAdapter.ShotViewHolder>(context,list,1000) {
 
-    private var mContext = context
-    private var mList = list
     private var mListener: OnRecyclerViewItemClickListener? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
-        return ShotViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_shot, parent, false), mListener)
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ShotsAdapter.ShotViewHolder {
+        return ShotViewHolder(LayoutInflater.from(context).inflate(R.layout.item_shot, parent, false), mListener)
     }
 
-    override fun onBindViewHolder(holderFollower: RecyclerView.ViewHolder?, position: Int) {
-        if (position <= mList.size) {
-            val shot = mList[position]
-            with(holderFollower as ShotViewHolder) {
-                itemView.avatar.loadAvatar(shot.user?.avatarUrl!!)
-                itemView.shot_image_view.loadNormal(shot.images.best())
-                itemView.tag_gif.visibility = if (shot.animated) View.VISIBLE else View.GONE
-                itemView.shot_title.text = mContext.getString(R.string.shot_title).format(shot.user?.name, shot.title)
-            }
+
+    override fun onBindViewHolder(holder: ShotsAdapter.ShotViewHolder?, position: Int) {
+        super.onBindViewHolder(holder, position)
+        if (position <= items.size) {
+            val shot = items[position]
+
+            holder?.setData(shot)
+
         }
     }
 
-    override fun getItemCount() = mList.size
+
 
     fun setItemClickListener(listener: OnRecyclerViewItemClickListener) {
         mListener = listener
@@ -55,7 +53,12 @@ class ShotsAdapter(context: Context, list: List<Shot>) : RecyclerView.Adapter<Re
                 mListener?.onItemClick(view, layoutPosition)
             })
         }
-
+        fun setData(shot:Shot){
+            itemView.avatar.loadAvatar(shot.user?.avatarUrl!!)
+            itemView.shot_image_view.loadNormal(shot.images.best())
+            itemView.tag_gif.visibility = if (shot.animated) View.VISIBLE else View.GONE
+            itemView.shot_title.text = context.getString(R.string.shot_title).format(shot.user?.name, shot.title)
+        }
     }
 
 }

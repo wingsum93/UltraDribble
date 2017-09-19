@@ -105,7 +105,7 @@ class MainFragment : Fragment(), MainContract.View {
 
     override fun showAuthUserInfo(user: User) {
         user_name.text = user.name
-        avatar.loadAvatar(user.avatarUrl)
+        avatar.loadAvatar(user.avatarUrl!!)
     }
 
     override fun navigateToLogin() {

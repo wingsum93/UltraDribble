@@ -27,7 +27,7 @@ class LikesAdapter(context: Context, list: List<Like>) : RecyclerView.Adapter<Re
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder?, position: Int) {
         val like = mList[position]
         with(viewHolder as LikeViewHolder) {
-            itemView.avatar.loadAvatar(like.user.avatarUrl)
+            itemView.avatar.loadAvatar(like.user.avatarUrl!!)
             itemView.name.text = like.user.name
             itemView.user_name.text = like.user.username
         }

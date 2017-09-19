@@ -46,7 +46,7 @@ class CommentsPresenter(view: CommentsContract.View, shot: Shot) : CommentsContr
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({
-                        mView.setEditorVisible(it.canUserComment(), it.avatarUrl)
+                        mView.setEditorVisible(it.canUserComment(), it.avatarUrl!!)
                     }, {
                         it.printStackTrace()
                     })

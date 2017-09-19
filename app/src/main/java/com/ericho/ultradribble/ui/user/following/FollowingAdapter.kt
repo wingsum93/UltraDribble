@@ -27,7 +27,7 @@ class FollowingAdapter(context: Context, list: List<Followee>) : RecyclerView.Ad
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
         val followee = mList[position]
         with(holder as FollowingViewHolder) {
-            itemView.avatar.loadAvatar( followee.followee.avatarUrl)
+            itemView.avatar.loadAvatar( followee.followee.avatarUrl!!)
             itemView.name.text = followee.followee.name
             itemView.user_name.text = followee.followee.username
             itemView.bio.text = if (Build.VERSION.SDK_INT >= 24) {

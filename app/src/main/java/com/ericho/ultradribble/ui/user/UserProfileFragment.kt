@@ -91,7 +91,7 @@ class UserProfileFragment : Fragment(), UserProfileContract.View {
         when (id) {
             android.R.id.home -> activity.onBackPressed()
             R.id.action_follow_unfollow -> mPresenter.toggleFollow()
-            R.id.action_open_in_browser -> context.browse(mPresenter.getUser().htmlUrl)
+            R.id.action_open_in_browser -> context.browse(mPresenter.getUser().htmlUrl!!)
         }
         activity.invalidateOptionsMenu()
         return true
@@ -102,15 +102,15 @@ class UserProfileFragment : Fragment(), UserProfileContract.View {
     }
 
     override fun showUserInfo(user: User) {
-        avatar.loadAvatar( user.avatarUrl)
+        avatar.loadAvatar( user.avatarUrl!!)
 
-        user.links.twitter?.let {
+        user.links?.twitter?.let {
             user_info_twitter.text = it
         } ?: run {
             user_info_twitter.visibility = View.GONE
         }
 
-        user.links.web?.let {
+        user.links?.web?.let {
             user_info_web.text = it
         } ?: run {
             user_info_web.visibility = View.GONE

@@ -24,8 +24,7 @@ class ShotsAdapter(context: Context, list: List<Shot>) : BaseRecyclerAdapter<Sho
     }
 
 
-    override fun onBindViewHolder(holder: ShotsAdapter.ShotViewHolder?, position: Int) {
-        super.onBindViewHolder(holder, position)
+    override fun onBindContentViewHolder(holder: ShotViewHolder?, position: Int) {
         if (position <= items.size) {
             val shot = items[position]
 
@@ -33,8 +32,6 @@ class ShotsAdapter(context: Context, list: List<Shot>) : BaseRecyclerAdapter<Sho
 
         }
     }
-
-
 
     fun setItemClickListener(listener: OnRecyclerViewItemClickListener) {
         mListener = listener

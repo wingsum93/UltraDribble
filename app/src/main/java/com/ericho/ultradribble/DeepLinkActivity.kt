@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.airbnb.deeplinkdispatch.DeepLinkHandler
 import com.ericho.ultradribble.UltraDeepLinkModule
+import timber.log.Timber
 
 /**
  *
@@ -26,7 +27,7 @@ class DeepLinkActivity : AppCompatActivity() {
         // Delegate the deep link handling to DeepLinkDispatch.
         // It will start the correct Activity based on the incoming Intent URI
         deepLinkDelegate.dispatchFrom(this)
-
+        Timber.d("Deep link process")
         // Finish this Activity since the correct one has been just started
         finish()
 

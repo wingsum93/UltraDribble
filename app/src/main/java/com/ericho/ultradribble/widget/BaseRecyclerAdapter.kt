@@ -16,20 +16,22 @@ import android.view.animation.LinearInterpolator
 open abstract class BaseRecyclerAdapter<T,VH :RecyclerView.ViewHolder> constructor(
         val context:Context,
         val items:List<T>,
-        private val mDuration:Long = 500L) :RecyclerView.Adapter<VH>() {
+        private val mDuration:Long = 300L) :RecyclerView.Adapter<VH>() {
 
 
     private var mLastPosition:Int = -1
     private val mInterpolator = LinearInterpolator()
 
-    @CallSuper
     override fun onBindViewHolder(holder: VH?, position: Int) {
+        onBindContentViewHolder(holder, position)
         holder?.let {
             setAnimation(it.itemView,position)
         }
     }
 
     override fun getItemCount() = items.size
+
+    abstract fun onBindContentViewHolder(holder: VH?,position: Int)
 
     private fun setAnimation(viewToAnimate: View, position: Int) {
         // If the bound view wasn't previously displayed on screen, it's animated

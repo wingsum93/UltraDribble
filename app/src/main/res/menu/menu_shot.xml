@@ -7,7 +7,7 @@
 
     <item
         android:id="@+id/action_shot"
-        android:icon="@drawable/ic_more_vert_black_24dp"
+        android:icon="@drawable/ic_more_vert_white_24dp"
         android:title="@string/action_shot"
         app:showAsAction="ifRoom">
 

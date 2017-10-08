@@ -8,7 +8,7 @@
 
     <!--Get started-->
     <string name="get_started">GET STARTED</string>
-    <string name="welcome_to_mango">WELCOME TO ULTRADRIBBLE</string>
+    <string name="welcome_to_mango">ULTRADRIBBLE</string>
     <string name="request_refresh_token_failed">Request refresh token failed</string>
 
     <!--Main page-->

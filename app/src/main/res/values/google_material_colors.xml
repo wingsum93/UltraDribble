@@ -288,5 +288,6 @@
 
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
+    <color name="white_second">#9affffff</color>
 
 </resources>

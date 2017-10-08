@@ -10,8 +10,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,11 +23,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                android:theme="@style/AppTheme.ToolbarStyle"
+                android:theme="@style/AppBarOverlay"
                 app:layout_collapseMode="parallax"
-                app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:subtitleTextColor="@color/colorSecondaryText"
-                app:titleTextColor="@color/colorPrimaryText" />
+                app:popupTheme="@style/PopupOverlay"
+                app:subtitleTextColor="@color/white_second"
+                app:titleTextColor="@color/white" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,7 +53,7 @@
                     android:gravity="center_vertical"
                     android:paddingEnd="@dimen/activity_horizontal_margin"
                     android:paddingStart="@dimen/activity_horizontal_margin"
-                    android:textColor="@color/colorPrimaryText"
+                    android:textColor="@color/white"
                     tools:text="UI/UX designer with a background in branding and ..." />
 
             </LinearLayout>
@@ -73,8 +72,8 @@
                     android:layout_height="wrap_content"
                     android:autoLink="web"
                     android:drawablePadding="@dimen/activity_horizontal_margin"
-                    android:drawableStart="@drawable/ic_twitter_outline_black_24dp"
-                    android:textColor="@color/colorSecondaryText"
+                    android:drawableStart="@drawable/ic_twitter_outline_white_24dp"
+                    android:textColor="?android:textColorSecondary"
                     tools:text="https://tonnyl.github.io" />
 
                 <TextView
@@ -84,8 +83,8 @@
                     android:layout_marginTop="@dimen/activity_vertical_margin_half"
                     android:autoLink="web"
                     android:drawablePadding="@dimen/activity_horizontal_margin"
-                    android:drawableStart="@drawable/ic_link_black_24dp"
-                    android:textColor="@color/colorPrimaryText"
+                    android:drawableStart="@drawable/ic_link_white_24dp"
+                    android:textColor="@color/white"
                     tools:text="https://tonnyl.github.io" />
 
                 <TextView
@@ -94,8 +93,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_vertical_margin_half"
                     android:drawablePadding="@dimen/activity_horizontal_margin"
-                    android:drawableStart="@drawable/ic_location_black_24dp"
-                    android:textColor="@color/colorPrimaryText"
+                    android:drawableStart="@drawable/ic_location_white_24dp"
+                    android:textColor="@color/white"
                     tools:text="Beijing, China" />
 
                 <LinearLayout
@@ -108,7 +107,7 @@
                         android:id="@+id/followers"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorPrimaryText"
+                        android:textColor="@color/white"
                         tools:text="Followers 10" />
 
                     <TextView
@@ -116,7 +115,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginStart="@dimen/activity_horizontal_margin"
-                        android:textColor="@color/colorPrimaryText"
+                        android:textColor="@color/white"
                         tools:text="Following 11" />
 
                 </LinearLayout>

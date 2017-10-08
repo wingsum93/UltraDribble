@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/auth_background"
+    android:background="@drawable/auth_background2"
     android:orientation="vertical"
     tools:context=".ui.auth.AuthActivity">
 
@@ -17,6 +17,13 @@
         android:textColor="@android:color/white"
         android:textSize="27sp" />
 
+    <ImageView
+        android:layout_width="128sp"
+        android:layout_height="128sp"
+        android:id="@+id/image"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_dribble_white_520"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

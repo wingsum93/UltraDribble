@@ -14,12 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:name=".App"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.Blue">
 
         <activity
             android:name=".ui.main.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Blue.NoActionBar" />
         <activity
             android:name="com.ericho.ultradribble.ui.auth.AuthActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
@@ -45,42 +45,42 @@
         <activity
             android:name=".ui.shot.ShotActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Blue.NoActionBar" />
 
         <activity
             android:name=".ui.user.UserProfileActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Blue.NoActionBar" />
 
         <activity
             android:name=".ui.user.followers.FollowersActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Blue.NoActionBar" />
 
         <activity
             android:name=".ui.user.following.FollowingActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Blue.NoActionBar" />
 
         <activity
             android:name=".ui.shot.likes.LikesActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Blue.NoActionBar" />
 
         <activity
             android:name=".ui.shot.comments.CommentsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Blue.NoActionBar" />
 
         <activity
             android:name=".ui.settings.SettingsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Blue.NoActionBar" />
 
         <activity
             android:name=".ui.settings.license.LicensesActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Blue.NoActionBar" />
 
         <activity
             android:name=".DeepLinkActivity"
@@ -96,6 +96,16 @@
                     android:pathPattern="/shots/.*"
                     android:scheme="https" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.test.TestMainAct"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
     </application>
 

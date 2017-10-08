@@ -1,9 +1,13 @@
 package com.ericho.ultradribble.ui.auth
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.view.WindowManager
 import com.ericho.ultradribble.R
 import com.ericho.ultradribble.data.repository.AuthUserRepository
 import com.ericho.ultradribble.ui.main.MainActivity
@@ -32,6 +36,12 @@ class AuthActivity : AppCompatActivity() {
             finish()
             return
         }
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//        window.statusBarColor = ContextCompat.getColor(this,android.R.color.transparent)
+        window.statusBarColor = Color.parseColor("#063601")
+
+
 
         setContentView(R.layout.container)
 

@@ -87,92 +87,92 @@ data class User(
         @ColumnInfo(name = "buckets_count")
         @SerializedName("buckets_count")
         @Expose
-        var bucketsCount: Int,
+        var bucketsCount: Int = 0,
 
         @ColumnInfo(name = "comments_received_count")
         @SerializedName("comments_received_count")
         @Expose
-        var commentsReceivedCount: Int,
+        var commentsReceivedCount: Int = 0,
 
         @ColumnInfo(name = "followers_count")
         @SerializedName("followers_count")
         @Expose
-        var followersCount: Int,
+        var followersCount: Int = 0,
 
         @ColumnInfo(name = "followings_count")
         @SerializedName("followings_count")
         @Expose
-        var followingsCount: Int,
+        var followingsCount: Int = 0,
 
         @ColumnInfo(name = "likes_count")
         @SerializedName("likes_count")
         @Expose
-        var likesCount: Int,
+        var likesCount: Int = 0,
 
         @ColumnInfo(name = "likes_received_count")
         @SerializedName("likes_received_count")
         @Expose
-        var likesReceivedCount: Int,
+        var likesReceivedCount: Int = 0,
 
         @ColumnInfo(name = "projects_count")
         @SerializedName("projects_count")
         @Expose
-        var projectsCount: Int,
+        var projectsCount: Int = 0,
 
         @ColumnInfo(name = "rebounds_received_count")
         @SerializedName("rebounds_received_count")
         @Expose
-        var reboundsReceivedCount: Int,
+        var reboundsReceivedCount: Int = 0,
 
         @ColumnInfo(name = "shots_count")
         @SerializedName("shots_count")
         @Expose
-        var shotsCount: Int,
+        var shotsCount: Int = 0,
 
         @ColumnInfo(name = "teams_count")
         @SerializedName("teams_count")
         @Expose
-        var teamsCount: Int,
+        var teamsCount: Int = 0,
 
         @ColumnInfo(name = "can_upload_shot")
         @SerializedName("can_upload_shot")
         @Expose
-        var canUploadShot: Boolean,
+        var canUploadShot: Boolean = false,
 
         @ColumnInfo(name = "type")
         @SerializedName("type")
         @Expose
-        var type: String,
+        var type: String?,
 
         @ColumnInfo(name = "pro")
         @SerializedName("pro")
         @Expose
-        var pro: Boolean,
+        var pro: Boolean = false,
 
         @ColumnInfo(name = "buckets_url")
         @SerializedName("buckets_url")
         @Expose
-        var bucketsUrl: String,
+        var bucketsUrl: String?,
 
         @ColumnInfo(name = "followers_url")
         @SerializedName("followers_url")
         @Expose
-        var followersUrl: String,
+        var followersUrl: String?,
 
         @ColumnInfo(name = "following_url")
         @SerializedName("following_url")
         @Expose
-        var followingUrl: String,
+        var followingUrl: String?,
 
         @ColumnInfo(name = "likes_url")
         @SerializedName("likes_url")
         @Expose
-        var likesUrl: String,
+        var likesUrl: String?,
 
         @ColumnInfo(name = "shots_url")
         @SerializedName("shots_url")
         @Expose
-        var shotsUrl: String,
+        var shotsUrl: String?,
 
         @ColumnInfo(name = "teams_url")
         @SerializedName("teams_url")
@@ -193,7 +193,7 @@ data class User(
         @ColumnInfo(name = "id")
         @SerializedName("id")
         @Expose
-        var id: Long
+        var id: Long = 0
 
 ) : Parcelable {
 

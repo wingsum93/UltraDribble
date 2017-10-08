@@ -39,7 +39,7 @@ class AuthActivity : AppCompatActivity() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 //        window.statusBarColor = ContextCompat.getColor(this,android.R.color.transparent)
-        window.statusBarColor = Color.parseColor("#063601")
+        window.statusBarColor = Color.parseColor("#07c8f4")
 
 
 

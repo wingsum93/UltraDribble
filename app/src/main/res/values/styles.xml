@@ -61,7 +61,7 @@
 
 
 
-    <style name="AppTheme.AuthScreen" parent="AppTheme.NoActionBar">
+    <style name="AppTheme.Blue.AuthScreen" parent="AppTheme.Blue.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowTranslucentStatus">true</item>
     </style>

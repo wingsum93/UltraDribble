@@ -5,6 +5,7 @@ import android.support.v7.preference.Preference
 import android.support.v7.preference.PreferenceFragmentCompat
 import android.view.MenuItem
 import android.view.View
+import com.ericho.ultradribble.BuildConfig
 import com.ericho.ultradribble.R
 import com.ericho.ultradribble.ui.settings.license.LicensesActivity
 import org.jetbrains.anko.browse
@@ -63,6 +64,8 @@ class SettingsFragment : PreferenceFragmentCompat(), SettingsContract.View {
             context.email(getString(R.string.feedback_email), getString(R.string.feedback_email_subject))
             true
         }
+
+        findPreference("version_desc").summary = BuildConfig.VERSION_NAME
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {

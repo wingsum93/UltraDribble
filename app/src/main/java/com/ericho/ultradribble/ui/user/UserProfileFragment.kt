@@ -1,5 +1,7 @@
 package com.ericho.ultradribble.ui.user
 
+import android.graphics.Color
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -16,6 +18,9 @@ import com.ericho.ultradribble.ui.user.following.FollowingPresenter
 import kotlinx.android.synthetic.main.fragment_user_profile.*
 import org.jetbrains.anko.browse
 import org.jetbrains.anko.startActivity
+import android.support.customtabs.CustomTabsIntent
+
+
 
 
 /**
@@ -112,6 +117,13 @@ class UserProfileFragment : Fragment(), UserProfileContract.View {
 
         user.links?.web?.let {
             user_info_web.text = it
+            ///todo chromeCustomTab
+//            user_info_web.setOnClickListener {
+//                val builder = CustomTabsIntent.Builder()
+//                builder.setToolbarColor(Color.BLUE)
+//                val customTabsIntent = builder.build()
+//                customTabsIntent.launchUrl(activity, Uri.parse(user.links?.web))
+//            }
         } ?: run {
             user_info_web.visibility = View.GONE
         }

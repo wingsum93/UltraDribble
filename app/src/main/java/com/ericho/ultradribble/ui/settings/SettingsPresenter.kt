@@ -2,6 +2,7 @@ package com.ericho.ultradribble.ui.settings
 
 import android.content.Context
 import com.ericho.ultradribble.extension.dirSize
+import com.ericho.ultradribble.extension.logCustomView_Setting
 import com.ericho.ultradribble.glide.GlideApp
 import com.ericho.ultradribble.glide.MyGlideModule
 import io.reactivex.Observable
@@ -27,7 +28,7 @@ class SettingsPresenter(view: SettingsContract.View) : SettingsContract.Presente
     }
 
     override fun subscribe() {
-
+        this.logCustomView_Setting()
     }
 
     override fun unsubscribe() {

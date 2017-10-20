@@ -3,6 +3,7 @@ package com.ericho.ultradribble.ui.user
 import com.ericho.ultradribble.data.User
 import com.ericho.ultradribble.data.repository.AuthUserRepository
 import com.ericho.ultradribble.data.repository.UserRepository
+import com.ericho.ultradribble.extension.logCustomView_UserProfile
 import com.ericho.ultradribble.util.AccessTokenManager
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -41,6 +42,7 @@ class UserProfilePresenter(view: UserProfileContract.View, user: User) : UserPro
         } else {
             checkFollowing()
         }
+        this.logCustomView_UserProfile(mUser?.username ?: "unknown")
     }
 
     override fun unsubscribe() {

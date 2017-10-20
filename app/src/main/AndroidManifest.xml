@@ -15,7 +15,9 @@
         android:name=".App"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Blue">
-
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="a0910aa95a96b91adcf05dea50e9219058b49669" />
         <activity
             android:name=".ui.main.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"

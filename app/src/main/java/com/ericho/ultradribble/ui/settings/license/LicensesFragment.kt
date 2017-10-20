@@ -2,6 +2,8 @@ package com.ericho.ultradribble.ui.settings.license
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -12,6 +14,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.ericho.ultradribble.R
 import kotlinx.android.synthetic.main.fragment_licenses.*
+import timber.log.Timber
 
 /**
  *
@@ -21,6 +24,8 @@ import kotlinx.android.synthetic.main.fragment_licenses.*
 class LicensesFragment : Fragment(), LicensesContract.View {
 
     private lateinit var mPresenter: LicensesContract.Presenter
+    lateinit var adapter:LicenseAdapter
+    lateinit var recyclerView:RecyclerView
 
     companion object {
         @JvmStatic
@@ -41,7 +46,7 @@ class LicensesFragment : Fragment(), LicensesContract.View {
 
         mPresenter.subscribe()
 
-        web_view.loadUrl("file:///android_asset/licenses.html")
+
     }
 
     override fun onDestroyView() {
@@ -61,20 +66,15 @@ class LicensesFragment : Fragment(), LicensesContract.View {
     }
 
     private fun initViews() {
-        val settings = web_view.settings
-        settings.layoutAlgorithm = WebSettings.LayoutAlgorithm.SINGLE_COLUMN
-        settings.defaultTextEncodingName = "UTF-8"
-        settings.blockNetworkImage = false
-        settings.domStorageEnabled = true
-        settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+        recyclerView = view!!.findViewById(R.id.recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        adapter = LicenseAdapter(activity,this.getLicenseList())
+        recyclerView.adapter = adapter
 
-        web_view.webViewClient = object : WebViewClient() {
-            override fun shouldOverrideUrlLoading(webView: WebView?, request: WebResourceRequest?): Boolean {
-                webView?.loadUrl(request?.url.toString())
-                return true
-            }
+
+        title.setOnClickListener {
+            Timber.d("licenseTitle click")
         }
-
     }
 
 }

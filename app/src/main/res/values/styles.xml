@@ -6,7 +6,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:fontFamily">@font/product_family</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="windowActionBarOverlay">true</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
@@ -38,7 +37,9 @@
         <item name="tabIndicatorColor">?attr/colorAccent</item>
         <item name="tabSelectedTextColor">?attr/colorAccent</item>
         <item name="tabTextColor">@color/white</item>
-
+    </style>
+    <style name="MyTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">11sp</item>
     </style>
     <style name="MyTextViewStyle" parent="@android:style/Widget.TextView">
     </style>

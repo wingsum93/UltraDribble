@@ -77,4 +77,6 @@
     <string name="send_desc">Send</string>
     <string name="shot_desc">Shot</string>
     <string name="like_desc">Like</string>
+    <string name="confirm_to_exit" >Confirm to Exit?</string>
+    <string name="confirm">Confirm</string>
 </resources>

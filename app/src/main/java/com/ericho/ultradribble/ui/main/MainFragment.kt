@@ -17,10 +17,7 @@ import com.ericho.ultradribble.ui.user.UserProfilePresenter
 import com.ericho.ultradribble.util.AccessTokenManager
 import com.ericho.ultradribble.util.Constants
 import kotlinx.android.synthetic.main.fragment_shots.*
-import org.jetbrains.anko.clearTask
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.newTask
-import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.*
 
 /**
  *

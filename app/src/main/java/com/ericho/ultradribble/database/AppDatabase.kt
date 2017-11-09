@@ -11,7 +11,7 @@ import com.ericho.ultradribble.database.dao.UserDao
  * Created by Eric Ho on 2017/6/28.
  */
 
-@Database(entities = arrayOf(AccessToken::class, User::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(AccessToken::class, User::class), version = 1, exportSchema = true)
 abstract class AppDatabase: RoomDatabase() {
 
     companion object {

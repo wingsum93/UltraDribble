@@ -10,8 +10,8 @@ android {
         applicationId "com.ericho.ultradribble"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 2
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -93,6 +93,7 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:$archRoomVersion"
     implementation "android.arch.persistence.room:rxjava2:$archRoomVersion"
     kapt "android.arch.persistence.room:compiler:$archRoomVersion"
+    implementation "android.arch.persistence.room:testing:$archRoomVersion"
 
     // DeepLink dispatch
     implementation "com.airbnb:deeplinkdispatch:$deeplinkDispatchVersion"
@@ -111,5 +112,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-v4'
         exclude module: 'recyclerview-v7'
     }
+    compile "org.jetbrains.kotlin:kotlin-reflect:1.1.51"
 }
 

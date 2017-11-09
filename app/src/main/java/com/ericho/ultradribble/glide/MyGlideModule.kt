@@ -24,6 +24,9 @@ class MyGlideModule : AppGlideModule(){
         // Max cache size of glide.
         @JvmField
         val MAX_CACHE_SIZE = 1024 * 1024 * 512 // 512M
+        // 36MB, memory cache size
+        // default value: 24MB
+        val MAX_MEMORY_CACHE_SIZE = 1024 * 1024 * 36 // 36M
 
         // The cache directory name.
         @JvmField
@@ -33,10 +36,8 @@ class MyGlideModule : AppGlideModule(){
 
     override fun applyOptions(context: Context?, builder: GlideBuilder?) {
         builder?.setDecodeFormat(DecodeFormat.PREFER_ARGB_8888)
-        // 36MB, memory cache size
-        // default value: 24MB
-        val memoryCacheSize = 1024 * 1024 * 36
-        builder?.setMemoryCache(LruResourceCache(memoryCacheSize))
+
+        builder?.setMemoryCache(LruResourceCache(MAX_MEMORY_CACHE_SIZE))
 
         // Internal cache
         builder?.setDiskCache(InternalCacheDiskCacheFactory(context, CACHE_FILE_NAME, MAX_CACHE_SIZE))

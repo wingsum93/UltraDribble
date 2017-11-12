@@ -1,7 +1,7 @@
 package com.ericho.ultradribble
 
 import com.ericho.ultradribble.ui.settings.license.firstCharUppercase
-import org.junit.Assert
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
@@ -20,9 +20,9 @@ class QQUnitTest {
         val str3 = "lol"
         val str4 = "QQQ"
 
-        Assert.assertTrue(str != str.firstCharUppercase())
-        Assert.assertTrue(str2 == str2.firstCharUppercase())
-        Assert.assertTrue(str3 != str3.firstCharUppercase())
-        Assert.assertTrue(str4 == str4.firstCharUppercase())
+        assertTrue(str != str.firstCharUppercase())
+        assertTrue(str2 == str2.firstCharUppercase())
+        assertTrue(str3 != str3.firstCharUppercase())
+        assertTrue(str4 == str4.firstCharUppercase())
     }
 }

@@ -8,6 +8,7 @@ import android.view.View
 import com.ericho.ultradribble.BuildConfig
 import com.ericho.ultradribble.R
 import com.ericho.ultradribble.ui.settings.license.LicensesActivity
+import io.reactivex.rxkotlin.toSingle
 import org.jetbrains.anko.browse
 import org.jetbrains.anko.email
 import org.jetbrains.anko.startActivity

@@ -5,13 +5,14 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'io.fabric'
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '26.0.3'
     defaultConfig {
         applicationId "com.ericho.ultradribble"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 3
         versionName "1.0.2"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -20,19 +21,23 @@ android {
             }
         }
     }
+    testOptions {
+        execution 'ANDROID_TEST_ORCHESTRATOR'
+    }
+
     signingConfigs{
-        beta{
-            storeFile file(APK_KEYSTORE_FILE)
-            storePassword APK_KEYSTORE_PASSWORD
-            keyAlias APK_KEY_ALIAS
-            keyPassword APK_KEY_PASSWORD
-        }
+//        beta{
+//            storeFile file(APK_KEYSTORE_FILE)
+//            storePassword APK_KEYSTORE_PASSWORD
+//            keyAlias APK_KEY_ALIAS
+//            keyPassword APK_KEY_PASSWORD
+//        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.beta
+//            signingConfig signingConfigs.beta
         }
     }
 
@@ -51,10 +56,6 @@ ext{
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:2.2.2'
 
     // Support series
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
@@ -107,11 +108,24 @@ dependencies {
     implementation('com.crashlytics.sdk.android:crashlytics:2.7.0@aar') {
         transitive = true;
     }
-    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.0') {
-        exclude group: 'com.android.support', module: 'appcompat'
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude module: 'recyclerview-v7'
-    }
-    compile "org.jetbrains.kotlin:kotlin-reflect:1.1.51"
+
+
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test:rules:1.0.1'
+    androidTestUtil 'com.android.support.test:orchestrator:1.0.1'
+
+    // Espresso dependencies
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-accessibility:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-web:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.1'
+
+    // The following Espresso dependency can be either "compile"
+    // or "androidTestCompile", depending on your app's implementation
+    androidTestImplementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.1'
+    
 }
 

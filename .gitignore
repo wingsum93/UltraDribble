@@ -6,7 +6,9 @@
 /captures
 .externalNativeBuild
 /.idea/
-
 app/libs/
 app/schemas/
 projectFilesBackup/
+/gradlew
+/gradlew.bat
+app/src/main/gen

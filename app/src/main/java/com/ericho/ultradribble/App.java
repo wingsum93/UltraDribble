@@ -6,6 +6,7 @@ import com.crashlytics.android.Crashlytics;
 import com.facebook.stetho.Stetho;
 
 import io.fabric.sdk.android.Fabric;
+import io.realm.Realm;
 
 public class App extends Application {
 
@@ -17,6 +18,7 @@ public class App extends Application {
         Fabric.with(this, new Crashlytics());
         sAppConfig = new AppConfig(this);
         Stetho.initializeWithDefaults(this);
+        Realm.init(this);
     }
 
 

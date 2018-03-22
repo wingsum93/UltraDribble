@@ -29,6 +29,7 @@ fun LicensesFragment.getLicenseList():List<LicenseBo>{
         it.name = it.name.firstCharUppercase()
         it.author = it.author.firstCharUppercase()
     }
+    t.sortWith(compareBy<LicenseBo> { it.name }.thenBy { it.author })
     return t
 }
 

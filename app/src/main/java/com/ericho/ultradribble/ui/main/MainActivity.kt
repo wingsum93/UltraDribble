@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import com.ericho.ultradribble.R
 import com.ericho.ultradribble.util.AccessTokenManager
+import org.jetbrains.anko.design.snackbar
 
 /**
  * Show the homepage view.
@@ -49,11 +50,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         if(System.currentTimeMillis() > lastExitTime + exit_time_second * 1000 ){
-            Snackbar.make(findViewById(android.R.id.content),getString(R.string.confirm_to_exit),Snackbar.LENGTH_SHORT)
-                    .setAction(R.string.confirm,{super.onBackPressed()})
-                    .setActionTextColor(Color.YELLOW)
-                    .show()
+//            Snackbar.make(findViewById(android.R.id.content),getString(R.string.confirm_to_exit),Snackbar.LENGTH_SHORT)
+//                    .setAction(R.string.confirm,{super.onBackPressed()})
+//                    .setActionTextColor(Color.YELLOW)
+//                    .show()
             lastExitTime = System.currentTimeMillis()
+            snackbar(findViewById(android.R.id.content), R.string.confirm_to_exit, R.string.confirm) {
+                super.onBackPressed()
+            }.setActionTextColor(Color.YELLOW)
+                    .setDuration(Snackbar.LENGTH_SHORT)
+                    .show()
         }else{
             super.onBackPressed()
         }

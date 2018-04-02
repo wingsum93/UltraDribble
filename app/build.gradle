@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'io.fabric'
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.3'
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.ericho.ultradribble"
         minSdkVersion 21
@@ -88,6 +88,8 @@ dependencies {
     // Anko Layouts
     implementation "org.jetbrains.anko:anko-sdk25:$ankoLibVersion" // sdk15, sdk19, sdk21, sdk23 are also available
     implementation "org.jetbrains.anko:anko-appcompat-v7:$ankoLibVersion"
+    // Anko Design
+    implementation "org.jetbrains.anko:anko-design:$ankoLibVersion"
     // FlexBox layout
     implementation "com.google.android:flexbox:$flexboxVersion"
     // Room
@@ -104,7 +106,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.6.1'
 
 
-    androidTestImplementation "com.google.code.findbugs:jsr305:3.0.1"
+    androidTestImplementation "com.google.code.findbugs:jsr305:3.0.2"
     implementation('com.crashlytics.sdk.android:crashlytics:2.7.0@aar') {
         transitive = true;
     }

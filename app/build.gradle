@@ -108,7 +108,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.6.1'
 
 
-    androidTestImplementation "com.google.code.findbugs:jsr305:3.0.2"
+    androidTestImplementation "com.google.code.findbugs:jsr305:3.0.1"
     implementation('com.crashlytics.sdk.android:crashlytics:2.7.0@aar') {
         transitive = true;
     }

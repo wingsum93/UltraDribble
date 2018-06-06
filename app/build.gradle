@@ -40,7 +40,9 @@ android {
 //            signingConfig signingConfigs.beta
         }
     }
-
+    lintOptions {
+        abortOnError false
+    }
 }
 ext{
     retrofit2Version = '2.3.0'
